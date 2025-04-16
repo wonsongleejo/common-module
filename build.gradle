@@ -15,7 +15,9 @@ repositories {
 }
 
 dependencies {
-	implementation 'org.springframework.boot:spring-boot-starter-validation'
-	compileOnly 'org.projectlombok:lombok'
-	annotationProcessor 'org.projectlombok:lombok'
+	// 트랜잭션 어노테이션 지원
+	compileOnly 'org.springframework:spring-tx:6.1.5'
+
+	// Auditing 기능 지원
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 }
