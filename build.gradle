@@ -26,3 +26,12 @@ dependencies {
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
 }
+
+// 메인클래스 필요 없어서 지움 -> boojJar도 비활성화
+bootJar {
+	enabled = false
+}
+// 순수 라이브러리용 JAR -> 활성화
+jar {
+	enabled = true
+}
