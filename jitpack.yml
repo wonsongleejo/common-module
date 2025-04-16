@@ -3,3 +3,6 @@ jdk:
 
 install:
   - ./gradlew clean build -x test
+
+artifacts:
+  - build/libs/*.jar
