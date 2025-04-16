@@ -1,5 +1,6 @@
 plugins {
 	id 'java-library'
+	id 'maven-publish'
 }
 
 group = 'com.monkey'
@@ -28,4 +29,13 @@ jar {
 	enabled = true
 	archiveBaseName.set("common-module")
 	archiveVersion.set("${version}") // Jar 파일명 예시: common-module-1.0.0.jar
+}
+
+// pom.xml 추가로 생성
+publishing {
+	publications {
+		mavenJava(MavenPublication) {
+			from components.java
+		}
+	}
 }
