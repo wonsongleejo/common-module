@@ -1,7 +1,5 @@
 plugins {
-	id 'java'
-	id 'org.springframework.boot' version '3.2.4'
-	id 'io.spring.dependency-management' version '1.1.4'
+	id 'java-library'
 }
 
 group = 'com.monkey'
@@ -17,22 +15,14 @@ repositories {
 }
 
 dependencies {
-	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa:3.2.4'
+	implementation 'org.springframework.boot:spring-boot-starter-validation:3.2.4'
+	implementation 'org.springframework.boot:spring-boot-starter-web:3.2.4'
 
-	// 트랜잭션 어노테이션 지원
-	compileOnly 'org.springframework:spring-tx:6.1.5'
-
-	// Auditing 기능 지원
-	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
-
-	compileOnly 'org.projectlombok:lombok'
-	annotationProcessor 'org.projectlombok:lombok'
+	compileOnly 'org.projectlombok:lombok:1.18.30'
+	annotationProcessor 'org.projectlombok:lombok:1.18.30'
 }
 
-// 메인클래스 필요 없어서 지움 -> boojJar도 비활성화
-bootJar {
-	enabled = false
-}
 // 순수 라이브러리용 JAR -> 활성화
 jar {
 	enabled = true
