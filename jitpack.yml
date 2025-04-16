@@ -4,5 +4,5 @@ jdk:
 install:
   - ./gradlew clean build -x test
 
-output:
+artifacts:
   - build/libs/*.jar
