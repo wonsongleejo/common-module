@@ -17,6 +17,8 @@ repositories {
 }
 
 dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+
 	// 트랜잭션 어노테이션 지원
 	compileOnly 'org.springframework:spring-tx:6.1.5'
 
