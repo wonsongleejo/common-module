@@ -36,4 +36,6 @@ bootJar {
 // 순수 라이브러리용 JAR -> 활성화
 jar {
 	enabled = true
+	archiveBaseName.set("common-module")
+	archiveVersion.set("${version}") // Jar 파일명 예시: common-module-1.0.0.jar
 }
