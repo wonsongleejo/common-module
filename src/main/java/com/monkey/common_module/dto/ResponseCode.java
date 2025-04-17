@@ -27,6 +27,7 @@ public enum ResponseCode {
 
     // Product
     PRODUCT_ALREADY_EXISTS("P100", "이미 등록된 상품입니다.", HttpStatus.CONFLICT),
+    PRODUCT_FEIGN_CLIENT_ERROR("P101", "상품 정보 조회 중 오류가 발생했습니다.", HttpStatus.NOT_FOUND),
 
     // Product-Reservation
     PRODUCT_RESERVATION_FULL("PR100", "예약이 마감되었습니다.", HttpStatus.BAD_REQUEST),
