@@ -20,6 +20,7 @@ public enum ResponseCode {
     // Store
     STORE_ALREADY_EXISTS("S100", "이미 등록된 스토어.ㅖProductROUDUCT_NOT_FOUMT_입니다.", HttpStatus.CONFLICT),
     STORE_TIME_DUPLICATE("S101", "이미 등록된 시간대입니다.", HttpStatus.CONFLICT),
+    STORE_FEIGN_CLIENT_ERROR("S102", "스토어 조회 중 오류가 발생했습니다.", HttpStatus.BAD_REQUEST),
 
     // Store-Reservation
     STORE_RESERVATION_FULL("SR100", "예약이 마감되었습니다.", HttpStatus.BAD_REQUEST),
@@ -28,12 +29,13 @@ public enum ResponseCode {
     // Product
     PRODUCT_ALREADY_EXISTS("P100", "이미 등록된 상품입니다.", HttpStatus.CONFLICT),
     PRODUCT_NOT_FOUND("P101", "상품을 찾을 수 없습니다.", HttpStatus.NOT_FOUND),
+    PRODUCT_FEIGN_CLIENT_ERROR("P102", "상품 정보 조회 중 오류가 발생했습니다.", HttpStatus.BAD_REQUEST),
 
     // Product-Reservation
     PRODUCT_RESERVATION_FULL("PR100", "예약이 마감되었습니다.", HttpStatus.BAD_REQUEST),
     NOT_STORE_MEMBER("PR101", "스토어 예약 회원이 아닙니다.", HttpStatus.FORBIDDEN),
     PRODUCT_OUT_OF_STOCK("PR102", "상품 재고가 부족합니다.", HttpStatus.BAD_REQUEST),
-    PRODUCT_FEIGN_CLIENT_ERROR("P103", "상품 정보 조회 중 오류가 발생했습니다.", HttpStatus.BAD_REQUEST),
+    PRODUCT_PURCHASE_LIMIT_EXCEEDED("PR104", "예약 가능한 수량을 초과했습니다.", HttpStatus.BAD_REQUEST),
 
     // Slack
     SLACK_SEND_FAILED("SL100", "전송이 실패되었습니다.", HttpStatus.INTERNAL_SERVER_ERROR),
