@@ -16,6 +16,9 @@ public enum ResponseCode {
     USER_ALREADY_EXISTS("US100", "이미 등록된 회원입니다.", HttpStatus.CONFLICT),
     USER_NOT_FOUND("US200", "존재하지 않는 회원입니다.", HttpStatus.NOT_FOUND),
     PASSWORD_MISMATCH("US201", "비밀번호가 일치하지 않습니다.", HttpStatus.BAD_REQUEST),
+    INVALID_TOKEN("US301", "만료되었거나 유효하지 않은 토큰입니다.", HttpStatus.UNAUTHORIZED),
+    TOKEN_NOT_FOUND("US302", "토큰이 DB에 존재하지 않습니다.", HttpStatus.UNAUTHORIZED),
+    TOKEN_MISMATCH("US303", "요청된 토큰이 서버에 저장된 토큰과 일치하지 않습니다.", HttpStatus.UNAUTHORIZED),
 
     // Store
     STORE_ALREADY_EXISTS("S100", "이미 등록된 스토어.ㅖProductROUDUCT_NOT_FOUMT_입니다.", HttpStatus.CONFLICT),
