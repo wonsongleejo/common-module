@@ -16,15 +16,18 @@ public enum ResponseCode {
     USER_ALREADY_EXISTS("US100", "이미 등록된 회원입니다.", HttpStatus.CONFLICT),
     USER_NOT_FOUND("US200", "존재하지 않는 회원입니다.", HttpStatus.NOT_FOUND),
     PASSWORD_MISMATCH("US201", "비밀번호가 일치하지 않습니다.", HttpStatus.BAD_REQUEST),
+    USER_FEIGN_CLIENT_ERROR("US202", "회원 정보 조회 중 오류가 발생했습니다.", HttpStatus.BAD_REQUEST),
 
     // Store
     STORE_ALREADY_EXISTS("S100", "이미 등록된 스토어.ㅖProductROUDUCT_NOT_FOUMT_입니다.", HttpStatus.CONFLICT),
     STORE_TIME_DUPLICATE("S101", "이미 등록된 시간대입니다.", HttpStatus.CONFLICT),
     STORE_FEIGN_CLIENT_ERROR("S102", "스토어 조회 중 오류가 발생했습니다.", HttpStatus.BAD_REQUEST),
+    STORE_NOT_FOUND("S103", "스토어를 찾을 수 없습니다.", HttpStatus.NOT_FOUND),
 
     // Store-Reservation
     STORE_RESERVATION_FULL("SR100", "예약이 마감되었습니다.", HttpStatus.BAD_REQUEST),
     OUT_OF_RESERVATION_TIME("SR101", "예약 가능한 시간에서 벗어났습니다.", HttpStatus.BAD_REQUEST),
+    STORE_RESERVATION_FEIGN_CLIENT_ERROR("SR102", "", HttpStatus.BAD_REQUEST),
 
     // Product
     PRODUCT_ALREADY_EXISTS("P100", "이미 등록된 상품입니다.", HttpStatus.CONFLICT),
