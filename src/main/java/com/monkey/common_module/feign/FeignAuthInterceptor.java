@@ -15,26 +15,13 @@ public class FeignAuthInterceptor implements RequestInterceptor {
 
     @Override
     public void apply(RequestTemplate template) {
-        try {
-            ServletRequestAttributes attr = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
+        String token = AuthorizationContextHolder.getToken();
 
-            if (attr == null) {
-                log.warn("FeignAuthInterceptor: RequestAttributes가 null입니다.");
-                return;
-            }
-
-            HttpServletRequest request = attr.getRequest();
-            String token = request.getHeader("Authorization");
-
-            if (token != null && !token.isBlank()) {
-                template.header("Authorization", token);
-                log.debug("Feign 요청에 Authorization 헤더 추가 완료");
-            } else {
-                log.warn("Feign 요청 시 Authorization 헤더 없음");
-            }
-
-        } catch (Exception e) {
-            log.error("FeignAuthInterceptor 에러", e);
+        if (token != null && !token.isBlank()) {
+            template.header("Authorization", token);
+            log.debug("Feign 요청에 Authorization 헤더 자동 추가됨");
+        } else {
+            log.warn("Feign 요청 시 Authorization 헤더 없음");
         }
     }
 }
