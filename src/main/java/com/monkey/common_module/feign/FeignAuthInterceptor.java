@@ -33,7 +33,6 @@ public class FeignAuthInterceptor implements RequestInterceptor {
         String token = AuthorizationContextHolder.getToken();
         if (token != null && !token.isBlank()) {
             template.header("Authorization", token);
-            log.info("🧩 Authorization 헤더 추가 완료");
         }
 
         // 커스텀 헤더 추가
@@ -51,6 +50,6 @@ public class FeignAuthInterceptor implements RequestInterceptor {
             template.header("X-User-Role", role);
         }
 
-        log.info("🧩 Feign 요청에 X-User 헤더들 추가: id={}, name={}, role={}", userId, username, role);
+        log.info("Feign 요청에 X-User 헤더들 추가: id={}, name={}, role={}", userId, username, role);
     }
 }
