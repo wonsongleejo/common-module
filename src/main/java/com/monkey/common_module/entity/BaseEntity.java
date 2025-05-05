@@ -66,4 +66,11 @@ public class BaseEntity {
         this.deletedAt = LocalDateTime.now();
         this.deletedBy = userId;
     }
+
+    // soft delete 복구 메서드
+    public void deleteFailure() {
+        this.isDeleted = false;
+        this.deletedAt = null;
+        this.deletedBy = null;
+    }
 }
